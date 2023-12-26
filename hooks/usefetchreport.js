@@ -1,7 +1,7 @@
 import axios from "axios";
 import { APIKEY } from "../AccesKey/ApiKey";
 import { useRecoilState } from "recoil";
-import { weatherState } from "../atoms/atom";
+import { weatherState } from "../store/atoms/atom";
 
 export default function usefetchreport() {
   const [weatherReport, setWeatherReport] = useRecoilState(weatherState);

@@ -8,14 +8,20 @@ import {
   useRecoilValue,
   useSetRecoilState,
 } from "recoil";
-import { weatherState } from "../atoms/atom";
+import { weatherState } from "../store/atoms/atom";
 import { useState, useEffect } from "react";
 import usefetchreport from "../hooks/usefetchreport";
 import { useNavigate } from "react-router-dom";
+import { mySelector } from "../store/selector/selector";
 
 function Weather() {
+  const data1 = useRecoilValue(mySelector);
+  console.log(data1);
+
   return (
     <div>
+      {data1 ? <p>Climate:{data1}</p> : <p>Climate:normal</p>}
+
       <Search />
       <Rightbox />
       <Graph />
@@ -26,7 +32,7 @@ function Weather() {
 
 function Search() {
   const { fetchReport } = usefetchreport();
-  const [city, setCity] = useState();
+  const [city, setCity] = useState("coimbatore");
   const country = "india";
   const navigate = useNavigate();
 
@@ -99,7 +105,6 @@ function Graph() {
 
 function Bottombox() {
   const data2 = useRecoilValue(weatherState);
-
 
   return (
     <article>
