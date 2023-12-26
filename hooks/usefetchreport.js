@@ -1,5 +1,5 @@
 import axios from "axios";
-import { APIKEY } from "../Acceskey/accessKey";
+import { APIKEY } from "../AccesKey/ApiKey";
 import { useRecoilState } from "recoil";
 import { weatherState } from "../atoms/atom";
 

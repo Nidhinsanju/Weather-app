@@ -4,7 +4,7 @@ import * as React from "react";
 
 function DefaultCity() {
   const data = useRecoilValue(weatherState);
-  console.log(data,"1");
+  console.log("1");
   return <div>hi</div>;
 }
 
