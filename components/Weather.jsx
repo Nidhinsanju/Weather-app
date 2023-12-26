@@ -121,14 +121,16 @@ function Bottombox() {
             <th>Humidity</th>
           </tr>
           <tr>
-            <td>{temperture}</td>
-            <td>{pressure}</td>
-            <td>{visibility}</td>
-            <td>{sunRise}</td>
-            <td>{sunSet}</td>
-            <td>{timeZone}</td>
-            <td>{windSpeed}</td>
-            <td>{Humidity}</td>
+            <td>{temperture ? <h4>{temperture}</h4> : <h4>0°C</h4>}</td>
+            <td>{pressure ? <h4>{pressure}</h4> : <h4>0'PSI</h4>}</td>
+            <td>{visibility ? <h4>{visibility}</h4> : <h4>--</h4>}</td>
+            <td>{sunRise ? <h4>{sunRise}</h4> : <h4>0</h4>}</td>
+            <td>{sunSet ? <h4>{sunSet}</h4> : <h4>0</h4>}</td>
+            <td>{timeZone ? <h4>{timeZone}</h4> : <h4>0.00</h4>}</td>
+            <td>
+              {windSpeed ? <h4>{windSpeed}(m/s)</h4> : <h4>0.00(m/s)</h4>}
+            </td>
+            <td>{Humidity ? <h4>{Humidity}-g.m-3</h4> : <h4>0-g.m-3</h4>}</td>
           </tr>
         </tbody>
       </table>
