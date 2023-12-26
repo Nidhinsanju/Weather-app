@@ -12,16 +12,23 @@ import { weatherState } from "../store/atoms/atom";
 import { useState, useEffect } from "react";
 import usefetchreport from "../hooks/usefetchreport";
 import { useNavigate } from "react-router-dom";
-import { mySelector } from "../store/selector/selector";
+import {
+  dataClimate,
+  dataTemperture,
+  dataSunrise,
+  dataTimezone,
+  dataWind,
+  dataHumidity,
+  dataSunset,
+  dataPressure,
+  dataVisibility,
+} from "../store/selector/selector";
 
 function Weather() {
-  const data1 = useRecoilValue(mySelector);
-  console.log(data1);
+  const data2 = useRecoilValue(dataSunrise);
 
   return (
     <div>
-      {data1 ? <p>Climate:{data1}</p> : <p>Climate:normal</p>}
-
       <Search />
       <Rightbox />
       <Graph />
@@ -31,20 +38,13 @@ function Weather() {
 }
 
 function Search() {
-  const { fetchReport } = usefetchreport();
   const [city, setCity] = useState("coimbatore");
   const country = "india";
   const navigate = useNavigate();
+  const { fetchReport } = usefetchreport();
 
   return (
     <div>
-      <button
-        onClick={() => {
-          navigate("/city");
-        }}
-      >
-        click me
-      </button>
       <input
         id="City"
         type="text"
@@ -59,7 +59,7 @@ function Search() {
 }
 
 function Rightbox() {
-  const data2 = useRecoilValue(weatherState);
+  const data3 = useRecoilValue(dataClimate);
 
   return (
     <main
@@ -73,13 +73,7 @@ function Rightbox() {
         alignItems: "center",
       }}
     >
-      <h4>
-        {data2.weather ? (
-          <p>Climate:{data2.weather[0].main}</p>
-        ) : (
-          <p>Climate:normal</p>
-        )}
-      </h4>
+      <h4>{data3 ? <p>Climate:{data3}</p> : <p>Climate:normal</p>}</h4>
     </main>
   );
 }
@@ -102,9 +96,15 @@ function Graph() {
     </div>
   );
 }
-
 function Bottombox() {
-  const data2 = useRecoilValue(weatherState);
+  const temperture = useRecoilValue(dataTemperture);
+  const pressure = useRecoilValue(dataPressure);
+  const timeZone = useRecoilValue(dataTimezone);
+  const windSpeed = useRecoilValue(dataWind);
+  const Humidity = useRecoilValue(dataHumidity);
+  const sunSet = useRecoilValue(dataSunset);
+  const sunRise = useRecoilValue(dataSunrise);
+  const visibility = useRecoilValue(dataVisibility);
 
   return (
     <article>
@@ -112,8 +112,8 @@ function Bottombox() {
         <tbody>
           <tr>
             <th>Temperture</th>
-            <th>Max-Temp</th>
-            <th>Min-Temp</th>
+            <th>Pressure</th>
+            <th>Visibility</th>
             <th>Sunrise </th>
             <th>Sunset</th>
             <th>Timezone</th>
@@ -121,18 +121,19 @@ function Bottombox() {
             <th>Humidity</th>
           </tr>
           <tr>
-            <td>35.06</td>
-            <td>35.06</td>
-            <td>35.06</td>
-            <td>35.06</td>
-            <td>35.06</td>
-            <td>35.06</td>
-            <td>35.06</td>
-            <td>35.06</td>
+            <td>{temperture}</td>
+            <td>{pressure}</td>
+            <td>{visibility}</td>
+            <td>{sunRise}</td>
+            <td>{sunSet}</td>
+            <td>{timeZone}</td>
+            <td>{windSpeed}</td>
+            <td>{Humidity}</td>
           </tr>
         </tbody>
       </table>
     </article>
   );
 }
+
 export default Weather;

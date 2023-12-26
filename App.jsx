@@ -8,20 +8,16 @@ import {
   useRecoilValue,
   useSetRecoilState,
 } from "recoil";
-import DefaultCity from "./components/DefaultCity";
 import Weather from "./components/Weather";
 
 function app() {
   return (
     <RecoilRoot>
-      <React.Suspense fallback={<div>Loading...</div>}>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Weather />} />
-            <Route path="/city" element={<DefaultCity />} />
-          </Routes>
-        </Router>
-      </React.Suspense>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Weather />} />
+        </Routes>
+      </Router>
     </RecoilRoot>
   );
 }
