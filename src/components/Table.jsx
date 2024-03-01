@@ -22,7 +22,7 @@ export default function Bottombox() {
   const visibility = useRecoilValue(dataVisibility);
   const celius = temperture - 273.15;
   const decimal = parseFloat(celius).toFixed(2);
-  const check = "checking the value";
+
 
   return (
     <article>
