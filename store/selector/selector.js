@@ -52,7 +52,7 @@ export const dataClimate = selector({
   get: ({ get }) => {
     const { weather } = get(weatherState);
     if (weather) {
-      return weather[0].main;
+      return weather[0]?.main;
     } else {
       return "Loading";
     }

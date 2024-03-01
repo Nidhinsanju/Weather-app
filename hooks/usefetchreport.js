@@ -1,9 +1,9 @@
 import axios from "axios";
-import { APIKEY } from "../AccesKey/ApiKey";
 import { useRecoilState } from "recoil";
 import { weatherState } from "../store/atoms/atom";
 
 export default function usefetchreport() {
+  const APIKEY = import.meta.env?.VITE_APIKEY;
   const [weatherReport, setWeatherReport] = useRecoilState(weatherState);
   const fetchReport = async (city, country) => {
     const response = await axios.get(
