@@ -1,0 +1,59 @@
+[33mcommit e0ade13b41baf4180d7af288b7158b2b17f28387[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/master[m[33m, [m[1;32mmy-new-branch[m[33m, [m[1;32mmaster[m[33m)[m
+Author: nidhin sanju <nidhinsanjuk@gmail.com>
+Date:   Fri Mar 1 10:48:00 2024 +0530
+
+    UI changes
+
+[33mcommit 360c07c3688b7d95f32021dbd5a03a09c9f0fb51[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: nidhin sanju <nidhinsanjuk@gmail.com>
+Date:   Fri Mar 1 10:44:01 2024 +0530
+
+    UI changes
+
+[33mcommit c14eddac917d1ed5688768500347c37551a29e0c[m
+Author: Nidhinsanju <sanjuronaldo77@gmail.com>
+Date:   Tue Dec 26 18:24:32 2023 +0530
+
+    dataRendering
+
+[33mcommit 1caaac029f61c1729c8212481b4a5192d167e0c4[m
+Author: Nidhinsanju <sanjuronaldo77@gmail.com>
+Date:   Tue Dec 26 18:14:35 2023 +0530
+
+    Added data rendering
+
+[33mcommit af50696a9e204dd494b8cee972a2c822a8f3e7ed[m
+Author: Nidhinsanju <sanjuronaldo77@gmail.com>
+Date:   Tue Dec 26 14:29:48 2023 +0530
+
+    Change of file struture
+
+[33mcommit e3b315aa278e847a9d1b80634357c599c9ff5144[m
+Author: Nidhinsanju <sanjuronaldo77@gmail.com>
+Date:   Tue Dec 26 12:29:21 2023 +0530
+
+    Changed the accesskey location and updated the path
+
+[33mcommit ac91dd1c9303aadb57ccbb0ab5abea440250b576[m
+Author: Nidhinsanju <sanjuronaldo77@gmail.com>
+Date:   Tue Dec 26 12:25:53 2023 +0530
+
+    Added
+
+[33mcommit 6722a2268ffcc2dec9c777fb59362eee2221f812[m
+Author: Nidhin Sanju <63572934+Nidhinsanju@users.noreply.github.com>
+Date:   Tue Dec 26 12:14:36 2023 +0530
+
+    Create Readme.txt
+
+[33mcommit 5b6dbdfd3c031c66ee8af8417c1950baa9273136[m
+Author: Nidhin Sanju <63572934+Nidhinsanju@users.noreply.github.com>
+Date:   Tue Dec 26 12:11:19 2023 +0530
+
+    Delete Acceskey directory
+
+[33mcommit 5835405b1cd6bcaa2b28e777154dec8facd05b0d[m
+Author: Nidhinsanju <sanjuronaldo77@gmail.com>
+Date:   Tue Dec 26 12:09:42 2023 +0530
+
+    First commit for weather app
