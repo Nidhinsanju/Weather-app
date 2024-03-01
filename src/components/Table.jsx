@@ -23,7 +23,6 @@ export default function Bottombox() {
   const celius = temperture - 273.15;
   const decimal = parseFloat(celius).toFixed(2);
 
-
   return (
     <article>
       <div className="   h-full bg-white flex flex-wrap items-center justify-center p-3 ">

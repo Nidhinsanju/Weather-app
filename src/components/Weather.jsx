@@ -12,7 +12,6 @@ import { dataClimate } from "../store/selector/selector";
 function Weather() {
   const data2 = useRecoilValue(weatherState);
   const data3 = useRecoilValue(dataClimate);
-
   const [position, setPosition] = useState({ latitude: null, longitude: null });
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -24,7 +23,8 @@ function Weather() {
       });
     }
   }, []);
-
+  console.log(position);
+  
   return (
     <div>
       <div className="lg:px-14 xl:px-28 bg-[#365CCE] transition-all duration-700 fixed right-0 left-0 z-50 top-0">

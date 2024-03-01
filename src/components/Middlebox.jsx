@@ -1,22 +1,26 @@
+import { Button } from "@/components/ui/button";
+
 export default function MiddleBox(props) {
   const data3 = props.data3;
-  console.log(data3);
 
   return (
     <div>
-      <main
-        style={{
-          border: "2px solid red",
-          maxWidth: "10%",
-          maxHeight: "13%",
-          padding: "7%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <h4>{data3 ? <p>Climate:{data3}</p> : <p>Climate:normal</p>}</h4>
-      </main>
+      <div className="w-full max-w-sm bg-white border border-blue-800 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className="flex flex-col items-center pb-10">
+          <img
+            className="w-24 h-24 mb-3 rounded-full shadow-lg"
+            src="https://images.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg?cs=srgb&dl=pexels-pixabay-53594.jpg&fm=jpg"
+            alt="Cloud Image"
+          />
+          <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+            <p className="text-ellipsis">Today will be</p>
+          </h5>
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            {data3}
+          </span>
+          <div className="flex mt-4 md:mt-6"></div>
+        </div>
+      </div>
     </div>
   );
 }

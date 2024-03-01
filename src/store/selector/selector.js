@@ -54,7 +54,7 @@ export const dataClimate = selector({
     if (weather) {
       return weather[0]?.main;
     } else {
-      return "Loading";
+      return null;
     }
   },
 });
