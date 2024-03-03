@@ -21,6 +21,7 @@ export default function MiddleBox(props) {
           <div className="flex mt-4 md:mt-6"></div>
         </div>
       </div>
+      ////////////////////////////////////////////////////////////////
     </div>
   );
 }
