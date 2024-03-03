@@ -23,15 +23,14 @@ function Weather() {
       });
     }
   }, []);
-  console.log(position);
-  
+
   return (
     <div>
-      <div className="lg:px-14 xl:px-28 bg-[#365CCE] transition-all duration-700 fixed right-0 left-0 z-50 top-0">
-        <div className="flex justify-between  w-full max-w-screen-3xl mx-auto font-semibold h-10 px-5"></div>
+      <div className="lg:px-14 xl:px-28 bg-[#365CCE] transition-all duration-700  right-0 left-0 z-50 top-0">
         <Search />
+        <div className="flex justify-between  w-full max-w-screen-3xl mx-auto font-semibold h-10 px-5"></div>
       </div>
-      <div className="mt-40">
+      <div className="mt-10">
         <MiddleBox data3={data3} />
         <Graph data2={data2} />
         <Bottombox />

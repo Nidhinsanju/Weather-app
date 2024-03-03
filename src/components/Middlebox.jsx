@@ -4,7 +4,7 @@ export default function MiddleBox(props) {
   const data3 = props.data3;
 
   return (
-    <div>
+    <div className="ml-60 ">
       <div className="w-full max-w-sm bg-white border border-blue-800 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div className="flex flex-col items-center pb-10">
           <img

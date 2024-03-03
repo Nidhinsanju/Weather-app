@@ -2,13 +2,13 @@ import usefetchreport from "../hooks/usefetchreport";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 export default function Search() {
-  const [city, setCity] = useState("coimbatore");
+  const [city, setCity] = useState("");
   const country = "india";
   const navigate = useNavigate();
   const { fetchReport } = usefetchreport();
 
   return (
-    <div className="mb-10">
+    <div className="pt-6">
       <form
         className="flex items-center max-w-sm mx-auto "
         onSubmit={(e) => {

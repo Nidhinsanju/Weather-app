@@ -12,6 +12,7 @@ export default function usefetchreport() {
     if (response) {
       setWeatherReport(response.data);
     } else {
+      alert("Something went wrong");
       console.log("error");
     }
   };
