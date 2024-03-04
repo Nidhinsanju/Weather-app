@@ -7,7 +7,7 @@ import { useRecoilValue } from "recoil";
 import { weatherState } from "../store/atoms/atom";
 import { useState, useEffect } from "react";
 import { dataClimate } from "../store/selector/selector";
-import Example from "./Example";
+import GetCity from "../hooks/usefetchcity";
 
 function Weather() {
   const data2 = useRecoilValue(weatherState);
@@ -17,8 +17,8 @@ function Weather() {
     if ("geolocation" in navigator) {
       navigator.geolocation?.getCurrentPosition(function (position) {
         setPosition({
-          latitude: position?.coords.latitude,
-          longitude: position?.coords.longitude,
+          latitude: position?.coords?.latitude,
+          longitude: position?.coords?.longitude,
         });
       });
     }
@@ -27,7 +27,7 @@ function Weather() {
   return (
     <div>
       <div className="lg:px-14 xl:px-28 bg-[#365CCE] transition-all duration-700  right-0 left-0 z-50 top-0">
-        <Search />
+        <Search position={position} />
         <div className="flex justify-between  w-full max-w-screen-3xl mx-auto font-semibold h-10 px-5"></div>
       </div>
       <div className="mt-10">

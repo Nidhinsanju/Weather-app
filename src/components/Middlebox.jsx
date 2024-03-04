@@ -2,7 +2,6 @@ import * as React from "react";
 
 export default function MiddleBox(props) {
   const data3 = props.data3;
-  console.log(data3);
 
   return (
     <div className="ml-60 ">

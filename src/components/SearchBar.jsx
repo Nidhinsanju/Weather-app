@@ -1,11 +1,30 @@
 import usefetchreport from "../hooks/usefetchreport";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-export default function Search() {
-  const [city, setCity] = useState("");
-  const country = "india";
-  const navigate = useNavigate();
+import { useEffect, useState } from "react";
+import GetCity from "../hooks/usefetchcity";
+
+export default function Search(pros) {
+  const [city, setCity] = useState();
+  const [country, setCountry] = useState("india");
+
+  const position = pros?.position;
   const { fetchReport } = usefetchreport();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (position?.latitude !== null) {
+        try {
+          const value = await GetCity(position);
+          console.log(value.city);
+          console.log(value.county);
+          fetchReport(value.city, value.county);
+        } catch (error) {
+          alert("Update Cordinates");
+        }
+      }
+    };
+
+    fetchData();
+  }, [position]);
 
   return (
     <div className="pt-6">
@@ -48,6 +67,7 @@ export default function Search() {
           type="submit"
           onClick={() => {
             if (city.length > 0) {
+              console.log(city);
               fetchReport(city, country);
             } else {
               alert("City name cant be empty");
