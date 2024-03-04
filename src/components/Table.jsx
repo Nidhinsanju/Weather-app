@@ -1,5 +1,4 @@
 import {
-  dataClimate,
   dataTemperture,
   dataSunrise,
   dataTimezone,
@@ -19,7 +18,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import Example from "./Example";
 
 export default function Bottombox() {
   const temperture = useRecoilValue(dataTemperture);
@@ -32,13 +30,13 @@ export default function Bottombox() {
   const visibility = useRecoilValue(dataVisibility);
   const celius = temperture - 273.15;
   const decimal = parseFloat(celius).toFixed(2);
-  const date = new Date(sunSet * 1000);
-  const date1 = new Date(sunRise * 1000);
-  const hours1 = date1.getHours().toString().padStart(2, "0");
-  const minutes1 = date1.getMinutes().toString().padStart(2, "0");
+  const sunSetDate = new Date(sunSet * 1000);
+  const sunRiseData = new Date(sunRise * 1000);
+  const hours1 = sunRiseData.getHours().toString().padStart(2, "0");
+  const minutes1 = sunRiseData.getMinutes().toString().padStart(2, "0");
+  const hours = sunSetDate.getHours().toString().padStart(2, "0");
+  const minutes = sunSetDate.getMinutes().toString().padStart(2, "0");
   const sunRiseime = `${hours1}:${minutes1}`;
-  const hours = date.getHours().toString().padStart(2, "0");
-  const minutes = date.getMinutes().toString().padStart(2, "0");
   const sunSetime = `${hours}:${minutes}`;
 
   return (
