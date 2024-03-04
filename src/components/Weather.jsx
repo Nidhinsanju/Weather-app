@@ -2,12 +2,12 @@ import * as React from "react";
 import Bottombox from "./Table";
 import "../App.css";
 import Search from "./SearchBar";
-import Graph from "./Graph";
 import MiddleBox from "./Middlebox";
 import { useRecoilValue } from "recoil";
 import { weatherState } from "../store/atoms/atom";
 import { useState, useEffect } from "react";
 import { dataClimate } from "../store/selector/selector";
+import Example from "./Example";
 
 function Weather() {
   const data2 = useRecoilValue(weatherState);
@@ -32,7 +32,6 @@ function Weather() {
       </div>
       <div className="mt-10">
         <MiddleBox data3={data3} />
-        <Graph data2={data2} />
         <Bottombox />
       </div>
     </div>

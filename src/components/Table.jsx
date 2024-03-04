@@ -11,6 +11,16 @@ import {
 } from "../store/selector/selector";
 import { useRecoilValue } from "recoil";
 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
+import Example from "./Example";
+
 export default function Bottombox() {
   const temperture = useRecoilValue(dataTemperture);
   const pressure = useRecoilValue(dataPressure);
@@ -25,70 +35,107 @@ export default function Bottombox() {
 
   return (
     <article>
-      <div className="   h-full bg-white flex flex-wrap items-center justify-center p-3 ">
-        <div className="lg:min-w-[1022px] xl:min-w-[1230px] 2xl:min-w-[1530px]">
-          <div className="w-full  px-2 max-w-[453px] mx-auto"></div>
-          <div className="flex items-center justify-center">
-            <table className="sm:inline-table w-full flex flex-row sm:bg-white  overflow-hidden ">
-              <thead className="text-black">
-                <tr className="bg-[#222E3A]/[6%] flex flex-col sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0 ">
-                  <th className="py-3 px-5 text-left border border-b rounded-tl-lg sm:rounded-none">
-                    Temperture
-                  </th>
-                  <th className="py-3 px-5 text-left border border-b">
-                    Pressure
-                  </th>
-                  <th className="py-3 px-5 text-left border border-b">
-                    Visibility
-                  </th>
-                  <th className="py-3 px-5 text-left border border-t rounded-bl-lg sm:rounded-none">
-                    Sunrise
-                  </th>
-                  <th className="py-3 px-5 text-left border border-t rounded-bl-lg sm:rounded-none">
-                    Sunset
-                  </th>
-                  <th className="py-3 px-5 text-left border border-t rounded-bl-lg sm:rounded-none">
-                    Timezone
-                  </th>
-                  <th className="py-3 px-5 text-left border border-t rounded-bl-lg sm:rounded-none">
-                    Windspeed
-                  </th>
-                  <th className="py-3 px-5 text-left border border-t rounded-bl-lg sm:rounded-none">
-                    Humidity
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="flex-1 sm:flex-none">
-                <tr className="flex flex-col sm:table-row mb-2 sm:mb-0">
-                  <td className="border hover:bg-[#222E3A]/[6%] hover:sm:bg-transparent py-3 px-5">
-                    {temperture ? <h4>{decimal}°C </h4> : <h4>0°C</h4>}
-                  </td>
-                  <td className="border hover:bg-[#222E3A]/[6%]  hover:sm:bg-transparent py-3 px-5">
-                    {pressure ? <h4>{pressure}°C </h4> : <h4>0°C</h4>}
-                  </td>
-                  <td className="border hover:bg-[#222E3A]/[6%]  hover:sm:bg-transparent py-3 px-5">
-                    {visibility ? <h4>{visibility}°C </h4> : <h4>0°C</h4>}
-                  </td>
-                  <td className="border hover:bg-[#222E3A]/[6%]  hover:sm:bg-transparent py-3 px-5 cursor-pointer">
-                    {sunRise ? <h4>{sunRise}°C </h4> : <h4>0°C</h4>}
-                  </td>
-                  <td className="border hover:bg-[#222E3A]/[6%]  hover:sm:bg-transparent py-3 px-5 cursor-pointer">
-                    {sunSet ? <h4>{sunSet}°C </h4> : <h4>0°C</h4>}
-                  </td>
-                  <td className="border hover:bg-[#222E3A]/[6%]  hover:sm:bg-transparent py-3 px-5 cursor-pointer">
-                    {timeZone ? <h4>{timeZone}°C </h4> : <h4>0°C</h4>}
-                  </td>
-                  <td className="border hover:bg-[#222E3A]/[6%]  hover:sm:bg-transparent py-3 px-5 cursor-pointer">
-                    {windSpeed ? <h4>{windSpeed}°C </h4> : <h4>0°C</h4>}
-                  </td>{" "}
-                  <td className="border hover:bg-[#222E3A]/[6%]  hover:sm:bg-transparent py-3 px-5 cursor-pointer">
-                    {Humidity ? <h4>{Humidity}°C </h4> : <h4>0°C</h4>}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <div className="mt-10 m-5 p-10 h-full bg-white flex flex-wrap items-center justify-center  ">
+        <Carousel
+          className="w-full max-w-sm"
+          opts={{
+            align: "start",
+          }}
+        >
+          <CarouselContent>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/2 m-5">
+              <Card className="p-28">
+                <CardContent className="flex items-center justify-center p-2">
+                  <div>
+                    <h1 className="font-semibold ">Temperture</h1>
+                    <span className="text-sm font-semibold">
+                      {temperture ? <h1>{temperture}°C </h1> : <h1>0°C</h1>}
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </CarouselItem>{" "}
+            <CarouselItem className="md:basis-1/2 lg:basis-1/2 m-5">
+              <Card className="p-28">
+                <CardContent className="flex items-center justify-center p-2">
+                  <div>
+                    <span className="text-sm font-semibold ">Pressure</span>
+                    <span className="text-sm font-semibold">
+                      {" "}
+                      {pressure ? <h4>{pressure}°C </h4> : <h4>0°C</h4>}
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/2 m-5">
+              <Card className="p-28">
+                <CardContent className="flex items-center justify-center p-2">
+                  <div>
+                    <span className="text-sm font-semibold ">Visibility</span>
+                    <span className="text-sm font-semibold">
+                      {" "}
+                      {visibility ? <h4>{visibility}°C </h4> : <h4>0°C</h4>}
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/2 m-5">
+              <Card className="p-28">
+                <CardContent className="flex items-center justify-center p-2">
+                  <div>
+                    <span className="text-sm font-semibold ">Sunrise</span>
+                    <span className="text-sm font-semibold">
+                      {" "}
+                      {sunRise ? <h4>{sunRise}°C </h4> : <h4>0°C</h4>}
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/2 m-5">
+              <Card className="p-28">
+                <CardContent className="flex items-center justify-center p-2">
+                  <div>
+                    <span className="text-sm font-semibold ">Sunset</span>
+                    <span className="text-sm font-semibold">
+                      {" "}
+                      {sunSet ? <h4>{sunSet}°C </h4> : <h4>0°C</h4>}
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/2 m-5">
+              <Card className="p-28">
+                <CardContent className="flex items-center justify-center p-2">
+                  <div>
+                    <span className="text-sm font-semibold ">Humidity</span>
+                    <span className="text-sm font-semibold">
+                      {Humidity ? <h4>{Humidity}°C </h4> : <h4>0°C</h4>}
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/2 m-5">
+              <Card className="p-28">
+                <CardContent className="flex items-center justify-center p-2">
+                  <div>
+                    <span className="text-sm font-semibold ">Windspeed</span>
+                    <span className="text-sm font-semibold">
+                      {" "}
+                      {windSpeed ? <h4>{windSpeed}°C </h4> : <h4>0°C</h4>}
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </article>
   );
