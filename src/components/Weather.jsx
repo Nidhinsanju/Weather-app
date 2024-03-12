@@ -7,7 +7,6 @@ import { useRecoilValue } from "recoil";
 import { weatherState } from "../store/atoms/atom";
 import { useState, useEffect } from "react";
 import { dataClimate } from "../store/selector/selector";
-import GetCity from "../hooks/usefetchcity";
 
 function Weather() {
   const data2 = useRecoilValue(weatherState);
@@ -26,9 +25,8 @@ function Weather() {
 
   return (
     <div>
-      <div className="lg:px-14 xl:px-28 bg-[#365CCE] transition-all duration-700  right-0 left-0 z-50 top-0">
+      <div className="lg:px-14 xl:px-28 flex justify-center items-center bg-[#365CCE] transition-all duration-700  right-0 left-0 z-50 p-5 top-0">
         <Search position={position} />
-        <div className="flex justify-between  w-full max-w-screen-3xl mx-auto font-semibold h-10 px-5"></div>
       </div>
       <div className="mt-10">
         <MiddleBox data3={data3} />

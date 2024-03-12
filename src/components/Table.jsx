@@ -41,7 +41,7 @@ export default function Bottombox() {
 
   return (
     <article>
-      <div className="mt-10 m-5 p-10 h-full bg-white flex flex-wrap items-center justify-center  ">
+      <div className="mt-10 m-5 p-10 h-full flex flex-wrap items-center justify-center  ">
         <Carousel
           className="w-full max-w-sm "
           opts={{

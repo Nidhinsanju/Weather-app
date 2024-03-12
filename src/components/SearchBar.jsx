@@ -14,8 +14,6 @@ export default function Search(pros) {
       if (position?.latitude !== null) {
         try {
           const value = await GetCity(position);
-          console.log(value.city);
-          console.log(value.county);
           fetchReport(value.city, value.county);
         } catch (error) {
           alert("Update Cordinates");
@@ -27,14 +25,13 @@ export default function Search(pros) {
   }, [position]);
 
   return (
-    <div className="pt-6">
+    <div className="flex justify-center items-center flex-wrap ">
       <form
-        className="flex items-center max-w-sm mx-auto "
+        className="flex items-center sm:min-w-60 md:min-w-96 lg:min-w-96 xl:min-w-96 max-w-26 mx-auto "
         onSubmit={(e) => {
           e.preventDefault();
         }}
       >
-        <label className="sr-only">Search</label>
         <div className="relative w-full">
           <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
             <svg
@@ -90,7 +87,6 @@ export default function Search(pros) {
               d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
             />
           </svg>
-          <span className="sr-only">Search</span>
         </button>
       </form>
     </div>

@@ -1,24 +1,72 @@
 import * as React from "react";
+import Clouds from "../Images/Clouds.jpeg";
+import Rain from "../Images/Rain.jpg";
+import Clear from "../Images/Clear_Sky.jpg";
+import Dirzzle from "../Images/Dizzle.jpg";
+import Shower from "../Images/Showers.jpg";
+import ThunderStrom from "../Images/ThunderStrom.jpg";
+import Snowing from "../Images/Snowing.jpg";
+import Hail from "../Images/Hail.jpg";
+import Fog from "../Images/Fog.jpg";
+import Mist from "../Images/Mist.jpg";
+import Dust from "../Images/Dust.jpeg";
+import Smoke from "../Images/Smoke.jpg";
+import SandStorm from "../Images/SandStorm.jpg";
+import Tornado from "../Images/Tornado.jpg";
 
 export default function MiddleBox(props) {
   const data3 = props.data3;
+  switch (data3) {
+    case "Clouds":
+      return <Card data={data3} image={Clouds} />;
+    case "Rain":
+      return <Card data={data3} image={Rain} />;
+    case "Clear":
+      return <Card data={data3} image={Clear} />;
+    case "Drizzle":
+      return <Card data={data3} image={Dirzzle} />;
+    case "Showers":
+      return <Card data={data3} image={Shower} />;
+    case "Thunderstorm":
+      return <Card data={data3} image={ThunderStrom} />;
+    case "Snow":
+      return <Card data={data3} image={Snowing} />;
+    case "Sleet":
+      return <Card data={data3} image={SnowImage} />;
+    case "Hail":
+      return <Card data={data3} image={Hail} />;
+    case "Fog":
+      return <Card data={data3} image={Fog} />;
+    case "Mist":
+      return <Card data={data3} image={Mist} />;
+    case "Smoke":
+      return <Card data={data3} image={Smoke} />;
+    case "Dust":
+      return <Card data={data3} image={Dust} />;
+    case "Sandstorm":
+      return <Card data={data3} image={SandStorm} />;
+    case "Tornado":
+      return <Card data={data3} image={Tornado} />;
+    default:
+      return null;
+  }
 
-  return (
-    <div className="ml-60 ">
-      <div className="w-full max-w-sm bg-white border border-blue-800 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <div className="flex flex-col items-center pb-10">
-          <img
-            className="w-24 h-24 mb-3 rounded-full shadow-lg"
-            src="https://images.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg?cs=srgb&dl=pexels-pixabay-53594.jpg&fm=jpg"
-            alt="Cloud Image"
-          />
-          <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white"></h5>
-          <span className="text-sm text-gray-500 dark:text-gray-400">
-            {data3}
-          </span>
-          <div className="flex mt-4 md:mt-6"></div>
+  function Card(props) {
+    const climate = props?.data;
+    const image = props?.image;
+    return (
+      <div className="flex justify-center items-center mx-auto">
+        <div className="w-full max-w-sm p-5 bg-white border mx-auto border-blue-800 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <div className="text-sm justify-center  items-center flex text-gray-500 dark:text-gray-400">
+            <img className="border rounded-3xl" src={image} alt="Clouds" />
+          </div>
+          <div>
+            <span className="flex justify-center items-center  font-bold p-5 font-serif			">
+              {climate}
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
