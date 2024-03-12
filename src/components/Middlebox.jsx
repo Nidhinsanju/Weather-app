@@ -13,47 +13,59 @@ import Dust from "../Images/Dust.jpeg";
 import Smoke from "../Images/Smoke.jpg";
 import SandStorm from "../Images/SandStorm.jpg";
 import Tornado from "../Images/Tornado.jpg";
+import ErrorPage from "./Error";
+import Haze from "../Images/Haze.jpg";
 
 export default function MiddleBox(props) {
   const data3 = props.data3;
-  switch (data3) {
-    case "Clouds":
-      return <Card data={data3} image={Clouds} />;
-    case "Rain":
-      return <Card data={data3} image={Rain} />;
-    case "Clear":
-      return <Card data={data3} image={Clear} />;
-    case "Drizzle":
-      return <Card data={data3} image={Dirzzle} />;
-    case "Showers":
-      return <Card data={data3} image={Shower} />;
-    case "Thunderstorm":
-      return <Card data={data3} image={ThunderStrom} />;
-    case "Snow":
-      return <Card data={data3} image={Snowing} />;
-    case "Sleet":
-      return <Card data={data3} image={SnowImage} />;
-    case "Hail":
-      return <Card data={data3} image={Hail} />;
-    case "Fog":
-      return <Card data={data3} image={Fog} />;
-    case "Mist":
-      return <Card data={data3} image={Mist} />;
-    case "Smoke":
-      return <Card data={data3} image={Smoke} />;
-    case "Dust":
-      return <Card data={data3} image={Dust} />;
-    case "Sandstorm":
-      return <Card data={data3} image={SandStorm} />;
-    case "Tornado":
-      return <Card data={data3} image={Tornado} />;
-    default:
-      return null;
+  console.log(data3);
+  if (data3) {
+    switch (data3) {
+      case "Clouds":
+        return <Card data={data3} image={Clouds} />;
+      case "Rain":
+        return <Card data={data3} image={Rain} />;
+      case "Clear":
+        return <Card data={data3} image={Clear} />;
+      case "Drizzle":
+        return <Card data={data3} image={Dirzzle} />;
+      case "Showers":
+        return <Card data={data3} image={Shower} />;
+      case "Thunderstorm":
+        return <Card data={data3} image={ThunderStrom} />;
+      case "Snow":
+        return <Card data={data3} image={Snowing} />;
+      case "Sleet":
+        return <Card data={data3} image={SnowImage} />;
+      case "Hail":
+        return <Card data={data3} image={Hail} />;
+      case "Fog":
+        return <Card data={data3} image={Fog} />;
+      case "Mist":
+        return <Card data={data3} image={Mist} />;
+      case "Smoke":
+        return <Card data={data3} image={Smoke} />;
+      case "Dust":
+        return <Card data={data3} image={Dust} />;
+      case "Sandstorm":
+        return <Card data={data3} image={SandStorm} />;
+      case "Haze":
+        return <Card data={data3} image={Haze} />;
+      case "Tornado":
+        return <Card data={data3} image={Tornado} />;
+      default:
+        return (
+          <div>
+            <ErrorPage />
+          </div>
+        );
+    }
   }
 
   function Card(props) {
     const climate = props?.data;
     const image = props?.image;
+    console.log(climate);
     return (
       <div className="flex justify-center items-center mx-auto">
         <div className="w-full max-w-sm p-5 bg-white border mx-auto border-blue-800 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
